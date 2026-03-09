@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ServeNow Light Mode — Teal/Emerald trust palette */
+    --background: 0.98 0.004 195;
+    --foreground: 0.18 0.025 240;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.025 240;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.025 240;
+
+    --primary: 0.52 0.14 178;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.94 0.02 195;
+    --secondary-foreground: 0.28 0.05 220;
+
+    --muted: 0.94 0.01 200;
+    --muted-foreground: 0.5 0.03 220;
+
+    --accent: 0.88 0.06 195;
+    --accent-foreground: 0.25 0.06 195;
+
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --success: 0.55 0.16 155;
+    --success-foreground: 0.99 0 0;
+
+    --warning: 0.72 0.18 75;
+    --warning-foreground: 0.18 0.04 40;
+
+    --border: 0.88 0.015 210;
+    --input: 0.88 0.015 210;
+    --ring: 0.52 0.14 178;
+
+    --chart-1: 0.52 0.14 178;
+    --chart-2: 0.58 0.16 230;
+    --chart-3: 0.65 0.18 155;
+    --chart-4: 0.7 0.17 75;
+    --chart-5: 0.62 0.22 25;
+
+    --sidebar: 0.16 0.04 230;
+    --sidebar-foreground: 0.95 0.01 195;
+    --sidebar-primary: 0.52 0.14 178;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.22 0.05 230;
+    --sidebar-accent-foreground: 0.85 0.02 195;
+    --sidebar-border: 0.28 0.05 230;
+    --sidebar-ring: 0.52 0.14 178;
+
+    /* Service category colors */
+    --chef: 0.7 0.17 55;
+    --plumber: 0.55 0.16 230;
+    --carpenter: 0.6 0.18 60;
+    --pest-control: 0.52 0.16 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-success { color: oklch(var(--success)); }
+  .bg-success { background-color: oklch(var(--success)); }
+  .text-warning { color: oklch(var(--warning)); }
+  .bg-warning { background-color: oklch(var(--warning)); }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.16 0.04 230) 0%,
+      oklch(0.22 0.07 195) 50%,
+      oklch(0.18 0.05 180) 100%
+    );
+  }
+
+  .gradient-card-chef {
+    background: linear-gradient(135deg, oklch(0.96 0.04 55) 0%, oklch(0.92 0.07 50) 100%);
+  }
+  .gradient-card-plumber {
+    background: linear-gradient(135deg, oklch(0.95 0.04 230) 0%, oklch(0.9 0.07 235) 100%);
+  }
+  .gradient-card-carpenter {
+    background: linear-gradient(135deg, oklch(0.96 0.04 60) 0%, oklch(0.91 0.08 55) 100%);
+  }
+  .gradient-card-pest {
+    background: linear-gradient(135deg, oklch(0.96 0.04 145) 0%, oklch(0.91 0.07 150) 100%);
+  }
+
+  .mesh-bg {
+    background-color: oklch(0.98 0.004 195);
+    background-image:
+      radial-gradient(at 20% 30%, oklch(0.88 0.08 195 / 0.4) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, oklch(0.85 0.1 178 / 0.3) 0px, transparent 50%),
+      radial-gradient(at 60% 10%, oklch(0.9 0.06 220 / 0.3) 0px, transparent 50%);
+  }
+}
